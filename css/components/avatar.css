@@ -1,0 +1,7 @@
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-circle:hover {
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.4);
+}

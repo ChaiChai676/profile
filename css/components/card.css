@@ -1,12 +1,16 @@
 .card {
   position: relative;
-  height: 250px;
+  padding: 40px;
+  margin: 10px;
+  box-shadow: 8px 13px 15px rgba(0,0,0,0.8);
+  border-radius: 10px;
   background: linear-gradient(135deg,
     rgba(30,30,30,0.6) 30%,
     rgba(46,46,46,0.5) 80%),
   url("http://unsplash.it/300/250/?random");
   background-size: cover;
   color: white;
+  text-align: center;
 }
 
 .card-user {
