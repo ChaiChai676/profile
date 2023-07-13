@@ -1,0 +1,67 @@
+html, body{
+   padding: 0;
+   margin: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+section {
+	width: 100%;
+}
+
+.section {
+	padding: 40px;
+}
+
+.navbar {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	background-color: yellow;
+	z-index: 1;
+}
+
+.navbar ul {
+	float: right;
+	margin-right: 20px;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.section-banner {
+	position: absolute;
+	height: 100%;
+	background-color: grey;
+	z-index: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.banner-offset {
+	height: 100vh;
+}
+
+.card {
+	padding: 20px;
+}
+
+.card-link {
+	color: black;
+	text-decoration: none;
+}
+
+.section-projects {
+	position: relative;
+}
