@@ -1,27 +1,49 @@
 html, body{
    padding: 0;
    margin: 0;
+   font-family: Calibri;
 }
 
-ul {
+h1, h2, h3, h4, p, ul {
+	margin: 0;
+}
+
+.unstyled-list {
 	list-style-type: none;
 }
 
+.project-lists {
+	width: 200px;
+	padding: 0px;
+}
+
+.first-list-offset {
+	padding-left: 20px;
+}
+
 section {
-	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .section {
+	max-width: 1240px;
 	padding: 40px;
+	justify-content: center;
 }
 
 .navbar {
-	position: absolute;
+	position: fixed;
 	padding: 0;
 	margin: 0;
 	width: 100%;
-	background-color: yellow;
+	background-color: #404040;
 	z-index: 1;
+}
+
+.navbar a {
+	color: white;
+	text-decoration: none;
 }
 
 .navbar ul {
@@ -32,21 +54,94 @@ section {
 .navbar li {
     display: inline-block;
     padding: 10px;
-    margin-top: 5px;
+}
+
+.linkedin {
+	position: relative;
+	top: 2px;
+}
+
+.linkedin img {
+	height: 16px;
+}
+
+.itch img {
+	height: 16px;
 }
 
 .section-banner {
 	position: absolute;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
 	height: 100%;
 	background-color: grey;
 	z-index: 0;
+	color: white;
 }
 
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.banner-title {
+	position: relative;
+	left: -30vw;
+	top: -10vh;
+}
+
+.banner-video {
+	width: 100%;
+	height:100%;
+	background-image: url("https://wallpaperaccess.com/full/7270362.gif");
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content-wrapper {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.section-skills h1 {
+	text-align: center;
+}
+
+.section-skills .content-wrapper {
+	align-items: flex-start;
+}
+
+.section-projects h1 {
+	text-align: center;
+}
+
+.section-projects h2 {
+	color: #666;
+}
+
+.section-projects .border-wrapper {
+  padding: 0px 20px 10px 10px;
+
+  background:
+    linear-gradient(to right, black 2px, transparent 2px) 0 0,
+    linear-gradient(to left, black 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, black 2px, transparent 2px) 0 0,
+    linear-gradient(to top, black 2px, transparent 2px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.section-projects .content-wrapper {
+	/*flex-wrap: wrap;*/ /* Take this out for carousel */
+	overflow-x: scroll;
+	overflow-y: hidden;
+	justify-content: flex-start;
+}
+
+.project-wrapper {
+	max-width: 1040px;
+	margin: auto;
+	height: 100%;
 }
 
 .banner-offset {
@@ -54,7 +149,31 @@ section {
 }
 
 .card {
+/*	width: 1280px;
+	height: 720px;*/
+	/* ratio 0.5625 */
+	width: 640px;
+	height: 360px;
 	padding: 20px;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-image-nr {
+	background-image: url("../images/NR_card.png");
+}
+
+.card-image-qnn {
+	background-image: url("../images/QNN_card.png");
+}
+
+.card-image-submerge {
+	background-image: url("../images/Submerge_card.png");
 }
 
 .card-link {
@@ -64,4 +183,189 @@ section {
 
 .section-projects {
 	position: relative;
+}
+
+.title-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.title-wrapper h1 {
+	width: 50%;
+}
+
+.project-date {
+	text-align: end;
+	width: 50%;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.info-wrapper {
+
+}
+
+.feature-content {
+	padding: 10px;
+	max-width: 500px;
+}
+
+.feature-gif {
+	margin-top: 10px; /* alignment with tabs */
+	min-width: 500px;
+	height: 500px;
+	background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+}
+
+.section-projects .content-wrapper {
+	vertical-align: top;
+	align-items: unset;
+}
+
+.section-nighttime-runners .tab-content {
+	height: 320px;
+}
+
+.section-nighttime-runners {
+	background-color: #fafafa;
+	border: 1px solid #f0f0f0;
+	box-shadow: 0px 2px #f0f0f0;
+	border-radius: 14px;
+}
+
+.section-submerge {
+	background-color: #fafafa;
+	border: 1px solid #f0f0f0;
+	box-shadow: 0px 2px #f0f0f0;
+	border-radius: 14px;
+}
+
+.video-wrap {
+	display: flex;
+	justify-content: center;
+}
+
+.section-nighttime-runners .feature-gif {
+	background-image: url("https://media.tenor.com/9vRAkntogEMAAAAd/background.gif");
+}
+
+.section-qnn .feature-gif {
+	background-image: url("https://media.tenor.com/9vRAkntogEMAAAAd/background.gif");
+}
+
+.section-submerge .feature-gif {
+	background-image: url("https://media.tenor.com/9vRAkntogEMAAAAd/background.gif");
+}
+
+.list-wrapper {
+	display: flex;
+}
+
+/**/
+
+
+.tabbed {
+	overflow-x: hidden; /* so we could easily hide the radio inputs */
+	margin: 10px 0;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #ccc;
+}
+
+.tabbed [type="radio"] {
+	/* hiding the inputs */
+	display: none;
+}
+
+.tab-container {
+
+}
+
+.tabs {
+	margin-top: 10px;
+	display: flex;
+	align-items: stretch;
+	list-style: none;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.tab {
+}
+
+.tab > label {
+	display: block;
+	margin-bottom: -1px;
+	padding: 12px 15px;
+	border: 1px solid #ccc;
+	background: #eee;
+	color: #666;
+	font-size: 12px; 
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;	
+	transition: all 0.3s;
+}
+.tab:hover label {
+	border-top-color: #333;
+	color: #333;
+}
+
+.tab-content {
+	display: none;
+	color: black;
+}
+
+/* As we cannot replace the numbers with variables or calls to element properties, the number of this selector parts is our tab count limit */
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
+.tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
+.tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label,
+.tabbed [type="radio"]:nth-of-type(6):checked ~ .tabs .tab:nth-of-type(6) label,
+.tabbed [type="radio"]:nth-of-type(7):checked ~ .tabs .tab:nth-of-type(7) label {
+	border-bottom-color: #fff;
+	border-top-color: #422bc9;
+	background: #fff;
+	color: #222;
+	transition: background 0.5s, border-bottom-color 0.5s, border-top-color 0.5s, color 0.5s;
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
+.tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
+.tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5),
+.tabbed [type="radio"]:nth-of-type(6):checked ~ .tab-content:nth-of-type(6) {
+	display: flex;
+}
+
+.section-nighttime-runners .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.section-nighttime-runners .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
+.section-nighttime-runners .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
+.section-nighttime-runners .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
+.section-nighttime-runners .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label,
+.section-nighttime-runners .tabbed [type="radio"]:nth-of-type(6):checked ~ .tabs .tab:nth-of-type(6) label,
+.section-nighttime-runners .tabbed [type="radio"]:nth-of-type(7):checked ~ .tabs .tab:nth-of-type(7) label {
+	border-bottom-color: #fafafa;
+	background: #fafafa;
+}
+
+.section-submerge .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.section-submerge .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
+.section-submerge .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
+.section-submerge .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
+.section-submerge .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label,
+.section-submerge .tabbed [type="radio"]:nth-of-type(6):checked ~ .tabs .tab:nth-of-type(6) label,
+.section-submerge .tabbed [type="radio"]:nth-of-type(7):checked ~ .tabs .tab:nth-of-type(7) label {
+	border-bottom-color: #fafafa;
+	background: #fafafa;
 }
