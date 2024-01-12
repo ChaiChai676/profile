@@ -1,341 +1,528 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chai Chai - Game Programming</title>
-  <link rel="stylesheet" href="css/main.css">
-  <!-- 
-      https://www.codiga.io/blog/display-code-snippets-in-html/ -->
-      <!-- https://www.hepsiburada.com/staticpage/944217163768745 -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chai Chai &#8211; Game Programmer</title>
+	<link rel="icon" href="media/cc-icon.png">
+	<!-- Highlight.js CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+	<!-- Highlight.js Script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+
+	<script src="scripts/head.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-  <div class="navbar">
-    <ul>
-      <li class="linkedin"><a href="https://www.linkedin.com/in/chai-chai-135413b4/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a></li>
-      <li class="itch"><a href="https://chaichai676.itch.io/">itch.io</a></li>
-    </ul>
-  </div>
-  <section class="section-banner">
-    <div class="banner-video">
-      <div class="content-wrapper">
-        <div class="banner-title">
-          <h1>Chai Chai</h1>
-          <p>Game Programming</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="banner-offset"></div>
-  <section class="section section-skills">
-    <h1>Skills</h1><br>
-    <div class="content-wrapper">
-      <ul class="unstyled-list">
-        <li>Unreal Engine & Blueprints</li>
-        <li>C++</li>
-        <li>Git</li>
-        <li>SVN</li>
-        <li>Ruby</li>
-        <li>RSpec (Ruby's testing framework)</li>
-        <li>Python</li>
-      </ul>
-      <ul class="unstyled-list">
-        <li>SQL</li>
-        <li>HTML</li>
-        <li>SCSS</li>
-        <li>JavaScript</li>
-        <li>Vue.js</li>
-        <li>Docker</li>
-      </ul>
-    </div>
-  </section>
-  <section class="section section-projects">
-    <h1>Unreal Engine Projects</h1>
-    <div class="border-wrapper">
-      <div class="content-wrapper">
-        <a class="card-link" href="#nighttime-runners">
-          <div class="card card-nr">
-            <h2>Nighttime Runners</h2>
-            <div class="image card-image-nr"></div>
-          </div>
-        </a>
-        <a class="card-link" href="#qnn">
-          <div class="card card-qnn">
-            <h2>QNN</h2>
-            <div class="image card-image-qnn"></div>
-          </div>
-        </a>
-        <a class="card-link" href="#submerge">
-          <div class="card card-submerge">
-            <h2>Submerge</h2>
-            <div class="image card-image-submerge"></div>
-          </div>
-        </a>
-        <a class="card-link" href="#code-library">
-          <div class="card card-code-library">
-            <h2>CodeLibrary - Code Snippets</h2>
-            <div class="image card-image-code-library"></div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-  <section id="nighttime-runners" class="section section-nighttime-runners">
-    <div class="project-wrapper">
-      <div class="title-wrapper">
-        <h1>Nighttime Runners - Voidea</h1>
-        <p class="project-date"><i>(10/03/23 - Ongoing)</i></p>
-      </div>
-      <p>Nighttime Runners Is an asymmetric multiplayer “capture the flag”-like game, played at night! Forty stealthy terrain-traversal enthusiasts (Runners) attempt to claim their package and return to base, while eight tracking techies with flashlights (Seekers) attempt to catch them.</p><br>
-      <p>The team:</p>
-      <div class="list-wrapper">
-        <ul class="project-lists unstyled-list first-list-offset">
-          <li><a href="https://www.voideagames.com/the-team">Voidea - The Team</a></li>
-        </ul>
-      </div>
-      <div class="content-wrapper">
-        <div class="tabbed">
-          <h3>My contributions</h3>
-          <input type="radio" id="tab-nr-1" name="tabs-nighttime-runners" checked>
-          <input type="radio" id="tab-nr-2" name="tabs-nighttime-runners">
-          <input type="radio" id="tab-nr-3" name="tabs-nighttime-runners">
-          <ul class="tabs">
-            <li class="tab"><label for="tab-nr-1">Debugging Packaged Builds</label></li>
-            <li class="tab"><label for="tab-nr-2">Spawning System</label></li>
-            <li class="tab"><label for="tab-nr-3">EIK Plugin</label></li>
-          </ul>
-          <div class="tab-content">
-            <div class="feature-content">
-              <p>James and I will package the project at least once a week or after a major update but every now and then the build will have a BSOD (black screen of death). <br><br>We often look at the logs in the Saved directory and search for any errors however, there can be very little information relating to the actual problem and in situations like these we may have to revert to previous commits to isolate the last working packaged build. <br><br>One of the things we learnt was to be careful when using Blueprint to manipulate certain C++ data, in an episode of BSOD we found that using a Blueprint function to clear a PlayerArray declared in the header file of the GameInstance was the source of the issue. Since our Blueprints handled creating and destroying multiplayer sessions, it made sense to clear the array there. To get around this I exposed a Blueprint callable function which clears the array.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-content">
-              <p>Each map has 6 spawn points where the Runners will start, the package will spawn on one of the three opposite spawn points to the starting location. Seekers spawn in the middle of the map. <br><br>James, Kartik and I worked together to restructure the existing code and deliver this feature in a more efficient manner. We used OnPostLogin in the base GameMode to save player data into the PlayerArray on the GameInstance. This is done to maintain that data on map change since the GameMode will get cleared when moving from the Lobby map to any gameplay map. <br><br>The spawning logic was originally done in OnPostLogin, however, this only executes once when entering the Lobby so we moved it to HandleStartingNewPlayer which will run whenever a new player joins. This allows players to join halfway through a game.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-content">
-              <p>EIK - Epic Online Services Integration Kit is the plugin used to handle the multiplayer side of the project. <br><br>I help James in the maintenance of this plugin since updates to it have broken the project before. We keep track of the Plugin on Betide's discord server.<br></p>
-              <p>Links:</p>
-              <a href="https://github.com/betidestudio/EOSIntegrationKit">EIK Source</a><br />
-              <a href="https://betide-studio.gitbook.io/eos-integration-kit/">EOS Setup Guide</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info-wrapper">
-        <ul>
-          <li>Joined Nighttime Runners halfway through development on 19/06/23 and learnt the existing codebase.</li>
-          <li>Adapted coding style to be more suited to the team.</li>
-          <li>Took part in the direction of the game.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="qnn" class="section section-qnn">
-    <div class="project-wrapper">
-      <div class="title-wrapper">
-        <h1>QNN</h1>
-        <p class="project-date"><i>(03/04/23 - Ongoing)</i></p>
-      </div>
-      <p>First person puzzle game in a dystopian future where an AI known as QNN (Quantum Neural Networks) has destroyed the world. You play as a cyborg who's arms have been replaced with robotic limbs each with their own abilities. The player must escape from the facility and traverse through a hazardous environment.</p><br>
-      <div class="list-wrapper">
-        <ul class="project-lists unstyled-list first-list-offset">
-          <li>Game Design Document:</li>
-          <li>GitHub:</li>
-          <li>itch.io:</li>
-        </ul>
-        <ul class="project-lists unstyled-list">
-          <li><a href="https://docs.google.com/document/d/1iAh9xkwaiLxem33LutaFcgeIyDrQdWJaScCpagcStGI/edit?usp=sharing">QNN GDD</a></li>
-          <li><a href="https://github.com/ChaiChai676/QNN">ChaiChai676/QNN</a></li>
-          <li><i>coming soon</i></li>
-        </ul>
-      </div><br>
-      <p>The team:</p>
-      <div class="list-wrapper">
-        <ul class="project-lists unstyled-list first-list-offset">
-          <li>Alannah Fowler</li>
-          <li>Chai Chai</li>
-          <li>Kartik Chaudhary</li>
-          <li>Sam Smith</li>
-          <li>Chisom AmaBertram</li>
-          <li>Marina Peters</li>
-          <li>Paige Imperial</li>
-        </ul>
-        <ul class="project-lists unstyled-list">
-          <li>Game Design and Leadership</li>
-          <li>Programming and Leadership</li>
-          <li>Programming</li>
-          <li>3D Modelling</li>
-          <li>UI and Concept Art</li>
-          <li>Rigging, 3D Animation</li>
-          <li>3D Animation</li>
-        </ul>
-      </div>
-      <div class="content-wrapper">
-        <div class="tabbed">
-          <h3>My contributions</h3>
-          <input type="radio" id="tab-qnn-1" name="tabs-qnn" checked>
-          <input type="radio" id="tab-qnn-2" name="tabs-qnn">
-          <input type="radio" id="tab-qnn-3" name="tabs-qnn">
-          <input type="radio" id="tab-qnn-4" name="tabs-qnn">
-          <input type="radio" id="tab-qnn-5" name="tabs-qnn">
-          <input type="radio" id="tab-qnn-6" name="tabs-qnn">
-          <ul class="tabs">
-            <li class="tab"><label for="tab-qnn-1">Enhanced Inputs Ability System</label></li>
-            <li class="tab"><label for="tab-qnn-2">UI and UMG Widgets</label></li>
-            <li class="tab"><label for="tab-qnn-3">Movement Component and Switches</label></li>
-            <li class="tab"><label for="tab-qnn-4">Gameplay Tags</label></li>
-            <li class="tab"><label for="tab-qnn-5">Grapple Arm</label></li>
-            <li class="tab"><label for="tab-qnn-6">Damage, Health and Respawn</label></li>
-          </ul>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>Kartik and I planned out and created an ability system which had to accommodate for different skeletal meshes and animations. The direction from design was that the arms can't be used at the same time and that we there should be an active state for which arm is in use. To handle this we used functions for binding and unbinding input actions as well as changing the respective mapping context.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>Whilst working closely with Chisom to deliver her UI design, we would break down the image requirements together and discuss how it would affect the programming.<br><br>The radial active arm widget has a lower opacity outside of the 'active' segment so we figured the best way to implement this was to overlay two images at 50% opacity and the overlap of the active segment would be at 100% opacity.<br><br>The health widget is a typical progress bar with two images: the fill and the frame. A function in the Characters tick will update the health whenever it changes.<br><br>Minimap is a WIP.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>I worked on a flexible movement component which gives designers additional options for switch activation and looping. As long as a switch is placed in the level, it can be selected in the details panel but by default the movement and rotation of the object will activate if no switch is selected. Since switches can have this movement component they can essentially act as a door as activating the switch again returns the object to its original transformation.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>We decided on implementing gameplay tags to give objects or actors properties which would be easier for designers to use in the details panel. These properties determine what interactions or arms can manipulate the object. I discussed with Kartik whether we could use just a tag for magnetic objects but having the property as a component made more sense to handle the range of movements needed during magnetism.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>The grapple arm uses line traces and gameplay tags to determine whether the player gets pulled or they pull an object towards themselves. The transformations are calculated through a Lerp (linear interpolation) with a curve exposed for designers to fine tune how a grapple launch may decelerate.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>I gave designers the option to have the damage component activated by switch as well as damage over time. I briefly discussed how to change the collision shape tied to the component with Alannah should she need to change it in Blueprints.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info-wrapper">
-        <ul>
-          <li>Onboarded Alannah and advised her on taking over the management of the team.</li>
-          <li>Organised team meetings to plan for when animation, modelling and programming intersecting in the project.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="submerge" class="section section-submerge">
-    <div class="project-wrapper">
-      <div class="title-wrapper">
-        <h1>Submerge</h1>
-        <p class="project-date"><i>(19/01/23 - 02/03/23)</i></p>
-      </div>
-      <p>A first person survival puzzle game completed as part of CG Spectrum's 6 week game jam where participants are paired with other members of the community. Each team makes up at least one programmer, designer and 3D modeller.</p><br>
-      <p><strong>Challenge rules</strong>: a game level has to be completed in 6 weeks with only 10 unique art assets and at least 2 interactions.</p><br>
-      <div class="list-wrapper">
-        <ul class="project-lists unstyled-list first-list-offset">
-          <li>GitHub:</li>
-          <li>itch.io:</li>
-        </ul>
-        <ul class="project-lists unstyled-list">
-          <li><a href="https://github.com/OrbixalArt/Submerge">OrbixalArt/Submerge</a></li>
-          <li><a href="https://chaichai676.itch.io/submerge">Submerge</a></li>
-        </ul>
-      </div><br>
-      <p>The team:</p>
-      <div class="list-wrapper">    
-        <ul class="project-lists unstyled-list first-list-offset">
-          <li>Chai Chai</li>
-          <li>Kartik Chaudhary</li>
-          <li>David Bradley-Bell</li>
-          <li>Liviu Ghitan</li>
-          <li>Robin Huijbregts</li>
-          <li>Sam Smith</li>
-        </ul>
-        <ul class="project-lists unstyled-list">
-          <li>Programming and Leadership</li>
-          <li>Programming</li>
-          <li>Game Design</li>
-          <li>Game Design</li>
-          <li>3D Modelling</li>
-          <li>3D Modelling</li>
-        </ul>
-      </div><br>
-      <div class="video-wrap">
-        <iframe width="672" height="378" src="https://www.youtube.com/embed/6fuwfbd_3Lg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div class="content-wrapper">
-        <div class="tabbed">
-          <h3>My contributions</h3>
-          <input type="radio" id="tab-submerge-1" name="tabs-submerge" checked>
-          <input type="radio" id="tab-submerge-2" name="tabs-submerge">
-          <input type="radio" id="tab-submerge-3" name="tabs-submerge">
-          <input type="radio" id="tab-submerge-4" name="tabs-submerge">
-          <ul class="tabs">
-            <li class="tab"><label for="tab-submerge-1">Kismet Library</label></li>
-            <li class="tab"><label for="tab-submerge-2">Physics Handle</label></li>
-            <li class="tab"><label for="tab-submerge-3">UI</label></li>
-            <li class="tab"><label for="tab-submerge-4">Settings Menu</label></li>
-          </ul>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>My introduction to the Kismet library involved learning about line traces and debug messaging. We use a line trace to pass object information to the physics handle.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>The component used for picking up objects. Here I learnt about exposing UPROPERTYs for the designers to adjust which was the object hold distance in this component.</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>With my knowledge of line traces, I set up tool tip widgets via AddToViewport. <br><br>A good early lesson I learnt was to be careful with how I use the tick function, whilst we needed the line trace to detect objects every frame, I had triggered AddToViewport every frame as well when looking at an interactable. This in turn made me confused when RemoveFromParent wasn't working to delete the widget (it was working but I needed to delete every instance of widgets that were added every frame).</p>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="feature-gif">
-            </div>
-            <div class="feature-content">
-              <p>For the settings menu we had the typical resolution options and frame rate limits. The lighting options were exposed as well since there was a very clear impact on performance when adjusting these.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info-wrapper">
-        <ul>
-          <li>Started this project one month into CG Spectrum with limited GameDev experience.</li>
-          <li>Taught the team how to use version control as well as how to clear and compile their projects from Visual Studios.</li>
-          <li>Organised meetings for a global team comprised of developers with full time jobs.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section>
-    <!-- CodeLibrary snippets -->
-  </section>
+	<div class="navbar">
+		<ul>
+			<li class="linkedin"><a href="https://www.linkedin.com/in/chai-chai-135413b4/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a></li>
+			<li class="itch"><a href="https://chaichai676.itch.io/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Itch.io_logo.svg/2560px-Itch.io_logo.svg.png"></a></li>
+		</ul>
+	</div>
+	<section class="section-banner">
+		<div class="banner-video">
+			<div class="content-wrapper">
+				<div class="banner-title">
+					<h1>Chai Chai</h1>
+					<p>Game Programmer</p>
+					<!-- <h2>put a paddle boarder that links to about me</h2> -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="banner-offset"></div>
+<!-- 	<video width="800" height="600" controls>
+		<source src="media/LittlerootTown.mp4" type="video/mp4">
+	</video> -->
+	<section class="section fade-in section-skills">
+		<h1>Skills</h1><br>
+		<div class="content-wrapper">
+			<ul class="unstyled-list">
+				<li>Unreal Engine & Blueprints</li>
+				<li>C++</li>
+				<li>Git</li>
+				<li>SVN</li>
+				<li>Ruby</li>
+				<li>RSpec (Ruby's testing framework)</li>
+				<li>Python</li>
+			</ul>
+			<ul class="unstyled-list">
+				<li>SQL</li>
+				<li>HTML</li>
+				<li>SCSS</li>
+				<li>JavaScript</li>
+				<li>Vue.js</li>
+				<li>Docker</li>
+			</ul>
+		</div>
+	</section>
+	<section class="section fade-in section-projects">
+		<h1>Unreal Engine Projects</h1>
+		<div class="border-wrapper">
+			<div class="content-wrapper">
+				<a class="card-link" href="#nighttime-runners">
+					<div class="card card-nr">
+						<h2>Nighttime Runners</h2>
+						<div class="image card-image-nr"></div>
+					</div>
+				</a>
+				<a class="card-link" href="#qnn">
+					<div class="card card-qnn">
+						<h2>QNN</h2>
+						<div class="image card-image-qnn"></div>
+					</div>
+				</a>
+				<a class="card-link" href="#submerge">
+					<div class="card card-submerge">
+						<h2>Submerge</h2>
+						<div class="image card-image-submerge"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+	<section id="nighttime-runners" class="section fade-in section-nighttime-runners">
+		<div class="project-wrapper">
+			<div class="title-wrapper">
+				<h1>Nighttime Runners - Voidea</h1>
+				<p class="project-date"><i>(10/03/23 - Ongoing)</i></p>
+			</div>
+			<p>Nighttime Runners Is an asymmetric multiplayer “capture the flag”-like game, played at night! Forty stealthy terrain-traversal enthusiasts (Runners) attempt to claim their package and return to base, while eight tracking techies with flashlights (Seekers) attempt to catch them.</p><br>
+			<p>The team:</p>
+			<div class="list-wrapper">
+				<ul class="project-lists unstyled-list first-list-offset">
+					<li><a href="https://www.voideagames.com/the-team">Voidea - The Team</a></li>
+				</ul>
+			</div>
+			<div class="content-wrapper">
+				<div class="tabbed">
+					<h3>My contributions</h3>
+					<input type="radio" id="tab-nr-1" name="tabs-nighttime-runners" checked>
+					<input type="radio" id="tab-nr-2" name="tabs-nighttime-runners">
+					<input type="radio" id="tab-nr-3" name="tabs-nighttime-runners">
+					<input type="radio" id="tab-nr-4" name="tabs-nighttime-runners">
+					<ul class="tabs">
+						<li class="tab"><label for="tab-nr-1">Spawning System</label></li>
+						<li class="tab"><label for="tab-nr-2">Gear System</label></li>
+						<li class="tab"><label for="tab-nr-3">EIK Plugin (remove)</label></li>
+						<li class="tab"><label for="tab-nr-4">Debugging Packaged Builds (remove)</label></li>
+					</ul>
+					<div class="tab-content">
+						<div class="feature-media">
+							Deal with this image, its too long
+							<div class="feature-asset nr-spawn">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="nr-1">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>Everything is small -sherbys</p>
+							<p>Each map has 6 spawn points where the Runners will start, the package will spawn on one of the three opposite spawn points to the starting location. Seekers spawn in the middle of the map. <br><br>James, Kartik and I worked together to restructure the existing code and deliver this feature in a more efficient manner. We used OnPostLogin in the base GameMode to save player data into the PlayerArray on the GameInstance. This is done to maintain that data on map change since the GameMode will get cleared when moving from the Lobby map to any gameplay map. <br><br>The spawning logic was originally done in OnPostLogin, however, this only executes once when entering the Lobby so we moved it to HandleStartingNewPlayer which will run whenever a new player joins. This allows players to join halfway through a game.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="nr-2-1">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+								<div class="code-container" data-id="nr-2-2">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>Check why the margin persists    Cosmetics data table, gear data table, OwnedItem struct, Currently Equipped Struct. PlayerStorage which is an array of OwnedItem.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="nr-3">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>EIK - Epic Online Services Integration Kit is the plugin used to handle the multiplayer side of the project. <br><br>I help James in the maintenance of this plugin since updates to it have broken the project before. We keep track of the Plugin on Betide's discord server.<br></p>
+							<p>Links:</p>
+							<a href="https://github.com/betidestudio/EOSIntegrationKit">EIK Source</a><br />
+							<a href="https://betide-studio.gitbook.io/eos-integration-kit/">EOS Setup Guide</a>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="nr-4">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>James and I will package the project at least once a week or after a major update but every now and then the build will have a BSOD (black screen of death). <br><br>We often look at the logs in the Saved directory and search for any errors however, there can be very little information relating to the actual problem and in situations like these we may have to revert to previous commits to isolate the last working packaged build. <br><br>One of the things we learnt was to be careful when using Blueprint to manipulate certain C++ data, in an episode of BSOD we found that using a Blueprint function to clear a PlayerArray declared in the header file of the GameInstance was the source of the issue. Since our Blueprints handled creating and destroying multiplayer sessions, it made sense to clear the array there. To get around this I exposed a Blueprint callable function which clears the array.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="info-wrapper">
+				<ul>
+					<li>Joined Nighttime Runners halfway through development on 19/06/23 and learnt the existing codebase.</li>
+					<li>Adapted coding style to be more suited to the team.</li>
+					<li>Took part in the direction of the game.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section id="qnn" class="section fade-in section-qnn">
+		<div class="project-wrapper">
+			<div class="title-wrapper">
+				<h1>QNN</h1>
+				<p class="project-date"><i>(03/04/23 - Ongoing)</i></p>
+			</div>
+			<p>First person puzzle game in a dystopian future where an AI known as QNN (Quantum Neural Networks) has destroyed the world. You play as a cyborg who's arms have been replaced with robotic limbs each with their own abilities. The player must escape from the facility and traverse through a hazardous environment.</p><br>
+			<div class="list-wrapper">
+				<ul class="project-lists unstyled-list first-list-offset">
+					<li>Game Design Document:</li>
+					<li>GitHub:</li>
+					<!-- <li>itch.io:</li> -->
+				</ul>
+				<ul class="project-lists unstyled-list">
+					<li><a href="https://docs.google.com/document/d/1iAh9xkwaiLxem33LutaFcgeIyDrQdWJaScCpagcStGI/edit?usp=sharing">QNN GDD</a></li>
+					<li><a href="https://github.com/ChaiChai676/QNN">ChaiChai676/QNN</a></li>
+					<!-- <li><i>coming soon</i></li> -->
+				</ul>
+			</div><br>
+			<p>The team:</p>
+			<div class="list-wrapper">
+				<ul class="project-lists unstyled-list first-list-offset">
+					<li>Alannah Fowler</li>
+					<li>Chai Chai</li>
+					<li>Kartik Chaudhary</li>
+					<li>Michael La Viola</li>
+					<li>Chisom AmaBertram</li>
+					<li>Nicholas Ball</li>
+					<li>Paige Imperial</li>
+					<li>Christoph Haider</li>
+					<li>Sam Smith</li>
+				</ul>
+				<ul class="project-lists unstyled-list">
+					<li>Game Design</li>
+					<li>Programming</li>
+					<li>Programming</li>
+					<li>Rigging</li>
+					<li>UI and Concept Art</li>
+					<li>3D Animation</li>
+					<li>3D Animation</li>
+					<li>3D Modelling</li>
+					<li>3D Modelling</li>
+				</ul>
+			</div>
+			<div class="content-wrapper">
+				<div class="tabbed">
+					<h3>My contributions</h3>
+					<input type="radio" id="tab-qnn-1" name="tabs-qnn" checked>
+					<input type="radio" id="tab-qnn-2" name="tabs-qnn">
+					<input type="radio" id="tab-qnn-3" name="tabs-qnn">
+					<input type="radio" id="tab-qnn-4" name="tabs-qnn">
+					<input type="radio" id="tab-qnn-5" name="tabs-qnn">
+					<input type="radio" id="tab-qnn-6" name="tabs-qnn">
+					<input type="radio" id="tab-qnn-7" name="tabs-qnn">
+					<ul class="tabs">
+						<li class="tab"><label for="tab-qnn-1">Enhanced Inputs Ability System (remove)</label></li>
+						<li class="tab"><label for="tab-qnn-2">UI and UMG Widgets</label></li>
+						<li class="tab"><label for="tab-qnn-3">Movement Component and Switches</label></li>
+						<li class="tab"><label for="tab-qnn-4">Gameplay Tags (remove)</label></li>
+						<li class="tab"><label for="tab-qnn-5">Grapple Arm</label></li>
+						<li class="tab"><label for="tab-qnn-6">Damage, Health and Respawn</label></li>
+						<li class="tab"><label for="tab-qnn-7">Animations <br><br></label></li>
+					</ul>
+					<div class="tab-content">
+						<div class="feature-media">
+							<div class="code-blocks">
+								<div class="code-container" data-id="qnn-1-1">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+								<div class="code-container" data-id="qnn-1-2">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>bullet points</p>
+							<p>justify text</p>
+							<p>Input actions, mapping context, clearing bindings and mapping context.<br><br>Kartik and I planned out and created an ability system which had to accommodate for different skeletal meshes and animations. The direction from design was that the arms can't be used at the same time and that we there should be an active state for which arm is in use. To handle this we used functions for binding and unbinding input actions as well as changing the respective mapping context.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							<div class="feature-asset qnn-ui-1">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="qnn-2">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>Whilst working closely with Chisom to deliver her UI design, we would break down the image requirements together and discuss how it would affect the programming.<br><br>The radial active arm widget has a lower opacity outside of the 'active' segment so we figured the best way to implement this was to overlay two images at 50% opacity and the overlap of the active segment would be at 100% opacity.<br><br>The health widget is a typical progress bar with two images: the fill and the frame. A function in the Characters tick will update the health whenever it changes.<br><br>Minimap is a WIP.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							have a screenshot of the uproperties as well as a gif of spinning?
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="qnn-3">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>I worked on a flexible movement component which gives designers additional options for switch activation and looping. As long as a switch is placed in the level, it can be selected in the details panel but by default the movement and rotation of the object will activate if no switch is selected. Since switches can have this movement component they can essentially act as a door as activating the switch again returns the object to its original transformation.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							this should be the code where you show how tags are used to identify code as well as maybe a screenshot of the uproperty?
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="qnn-4">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>We decided on implementing gameplay tags to give objects or actors properties which would be easier for designers to use in the details panel. These properties determine what interactions or arms can manipulate the object. I discussed with Kartik whether we could use just a tag for magnetic objects but having the property as a component made more sense to handle the range of movements needed during magnetism.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							gif should be an animtation of you grapple launching and pulling an object. code should be of maybe just the function names and you can talk about what happens in the ones that matter?
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="qnn-5">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>The grapple arm uses line traces and gameplay tags to determine whether the player gets pulled or they pull an object towards themselves. The transformations are calculated through a Lerp (linear interpolation) with a curve exposed for designers to fine tune how a grapple launch may decelerate.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							screenshot of the blueprints for how you change the collision mesh. show code for damage over time and so on, the fact that it should hit any actor.
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="qnn-6">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p>I gave designers the option to have the damage component activated by switch as well as damage over time. I briefly discussed how to change the collision shape tied to the component with Alannah should she need to change it in Blueprints.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-media">
+							gif of setting the blend space 600 - 1200 movement speed
+							gif of retargetting the Rig. Video will be of selecting bones and adding it to chain then playing an animation after.
+							<div class="feature-asset placeholder">
+							</div>
+							<div class="code-blocks">
+								<div class="code-container" data-id="qnn-6">
+									<div class="code-heading">
+										<p>cpp</p>
+									</div>
+									<pre><code class="cpp">
+									</code></pre>
+									<button class="copy-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+						<div class="feature-description">
+							<p><br><br>Blend spaces, retargeting, IK Rigs</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="info-wrapper">
+				<ul>
+					<li>Onboarded Alannah and advised her on taking over the management of the team.</li>
+					<li>Organised team meetings to plan for when animation, modelling and programming intersect in the project.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section id="submerge" class="section fade-in section-submerge">
+		<div class="project-wrapper">
+			<div class="title-wrapper">
+				<h1>Submerge</h1>
+				<p class="project-date"><i>(19/01/23 - 02/03/23)</i></p>
+			</div>
+			<p>A first person survival puzzle game completed as part of CG Spectrum's 6 week game jam where participants are paired with other members of the community. Each team makes up at least one programmer, designer and 3D modeller.</p><br>
+			<p><strong>Challenge rules</strong>: a game level has to be completed in 6 weeks with only 10 unique art assets and at least 2 interactions.</p><br>
+			<div class="list-wrapper">
+				<ul class="project-lists unstyled-list first-list-offset">
+					<li>GitHub:</li>
+					<li>itch.io:</li>
+				</ul>
+				<ul class="project-lists unstyled-list">
+					<li><a href="https://github.com/OrbixalArt/Submerge">OrbixalArt/Submerge</a></li>
+					<li><a href="https://chaichai676.itch.io/submerge">Submerge</a></li>
+				</ul>
+			</div><br>
+			<p>The team:</p>
+			<div class="list-wrapper">    
+				<ul class="project-lists unstyled-list first-list-offset">
+					<li>David Bradley-Bell</li>
+					<li>Liviu Ghitan</li>
+					<li>Chai Chai</li>
+					<li>Kartik Chaudhary</li>
+					<li>Robin Huijbregts</li>
+					<li>Sam Smith</li>
+				</ul>
+				<ul class="project-lists unstyled-list">
+					<li>Game Design</li>
+					<li>Game Design</li>
+					<li>Programming</li>
+					<li>Programming</li>
+					<li>3D Modelling</li>
+					<li>3D Modelling</li>
+				</ul>
+			</div><br>
+			<div class="video-wrap">
+				<iframe width="672" height="378" src="https://www.youtube.com/embed/6fuwfbd_3Lg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
+			<div class="content-wrapper">
+				<div class="tabbed">
+					<h3>My contributions</h3>
+					<input type="radio" id="tab-submerge-1" name="tabs-submerge" checked>
+					<input type="radio" id="tab-submerge-2" name="tabs-submerge">
+					<input type="radio" id="tab-submerge-3" name="tabs-submerge">
+					<input type="radio" id="tab-submerge-4" name="tabs-submerge">
+					<ul class="tabs">
+						<li class="tab"><label for="tab-submerge-1">Kismet Library</label></li>
+						<li class="tab"><label for="tab-submerge-2">Physics Handle</label></li>
+						<li class="tab"><label for="tab-submerge-3">UI</label></li>
+						<li class="tab"><label for="tab-submerge-4">Settings Menu</label></li>
+					</ul>
+					<div class="tab-content">
+						<div class="feature-asset placeholder">
+						</div>
+						<div class="feature-description">
+							<p>My introduction to the Kismet library involved learning about line traces and debug messaging. We use a line trace to pass object information to the physics handle.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-asset placeholder">
+						</div>
+						<div class="feature-description">
+							<p>The component used for picking up objects. Here I learnt about exposing UPROPERTYs for the designers to adjust which was the object hold distance in this component.</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-asset placeholder">
+						</div>
+						<div class="feature-description">
+							<p>With my knowledge of line traces, I set up tool tip widgets via AddToViewport. <br><br>A good early lesson I learnt was to be careful with how I use the tick function, whilst we needed the line trace to detect objects every frame, I had triggered AddToViewport every frame as well when looking at an interactable. This in turn made me confused when RemoveFromParent wasn't working to delete the widget (it was working but I needed to delete every instance of widgets that were added every frame).</p>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="feature-asset placeholder">
+						</div>
+						<div class="feature-description">
+							<p>For the settings menu we had the typical resolution options and frame rate limits. The lighting options were exposed as well since there was a very clear impact on performance when adjusting these.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="info-wrapper">
+				<ul>
+					<li>Started this project one month into CG Spectrum with limited GameDev experience.</li>
+					<li>Taught the team how to use version control as well as how to clear and compile their projects from Visual Studios.</li>
+					<li>Organised meetings for a global team comprised of developers with full time jobs.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section>
+			<!-- CodeLibrary snippets -->
+	</section>
+<script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="css/main.css">
 </body>
 </html>
