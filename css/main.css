@@ -339,7 +339,8 @@ section {
 }
 
 .placeholder {
-	background-image: url("https://media.tenor.com/9vRAkntogEMAAAAd/background.gif");
+	background-image: url("https://cdn.icon-icons.com/icons2/2367/PNG/512/question_mark_icon_143522.png");
+	filter: brightness(0) invert(1);
 }
 
 .section-nighttime-runners .nr-spawn {
