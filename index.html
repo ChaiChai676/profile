@@ -63,36 +63,77 @@
 	<section class="section section-projects">
 		<h1 class="fade-in">UNREAL ENGINE PROJECTS</h1>
 		<div class="border-wrapper">
-				<div class="row fade-in">	
-					<div class="col-lg-6 col-md-12">
-						<a class="card-link" href="#nighttime-runners">
-							<div class="card card-nr">
-								<h2>NIGHTTIME RUNNERS</h2>
-								<div class="image card-image-nr"></div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<a class="card-link" href="#qnn">
-							<div class="card card-qnn">
-								<h2>QNN</h2>
-								<div class="image card-image-qnn"></div>
-							</div>
-						</a>
-					</div>
+			<div class="row fade-in">	
+<!-- 				<div class="col-lg-6 col-md-12">
+					<a class="card-link" href="#ira">
+						<div class="card card-nr">
+							<h2>IRA</h2>
+							<div class="image card-image-ira"></div>
+						</div>
+					</a>
+				</div> -->
+				<div class="col-lg-6 col-md-12">
+					<a class="card-link" href="#nighttime-runners">
+						<div class="card card-nr">
+							<h2>NIGHTTIME RUNNERS</h2>
+							<div class="image card-image-nr"></div>
+						</div>
+					</a>
+				</div>	
+				<div class="col-lg-6 col-md-12">
+					<a class="card-link" href="#qnn">
+						<div class="card card-qnn">
+							<h2>QNN</h2>
+							<div class="image card-image-qnn"></div>
+						</div>
+					</a>
 				</div>
-				<div class="row fade-in">	
-					<div class="col-lg-6 col-md-12">
-						<a class="card-link" href="#submerge">
-							<div class="card card-submerge">
-								<h2>SUBMERGE</h2>
-								<div class="image card-image-submerge"></div>
-							</div>
-						</a>
-					</div>
+			</div>
+			<div class="row fade-in">	
+<!-- 				<div class="col-lg-6 col-md-12">
+					<a class="card-link" href="#qnn">
+						<div class="card card-qnn">
+							<h2>QNN</h2>
+							<div class="image card-image-qnn"></div>
+						</div>
+					</a>
+				</div> -->
+				<div class="col-lg-6 col-md-12">
+					<a class="card-link" href="#submerge">
+						<div class="card card-submerge">
+							<h2>SUBMERGE</h2>
+							<div class="image card-image-submerge"></div>
+						</div>
+					</a>
 				</div>
+			</div>
 		</div>
 	</section>
+<!-- 	<section id="ira" class="section section-ira">
+		<div class="project-wrapper">
+			<div class="title-wrapper fade-in">
+				<h1>IRA</h1>
+				<p class="project-date"><i>(14/12/23 - Ongoing)</i></p>
+			</div>
+			<h4 class="fade-in">ABOUT THE GAME</h4>
+			<p class="fade-in">fantastic</p>
+			<h4 class="fade-in">THE TEAM</h4>
+			<p class="fade-in">Four programmers</p>
+			<div class="container fade-in">
+				<div class="row">	
+					<div class="video-wrap col-lg-6 col-md-12">
+						<div class="feature-media placeholder"></div>
+					</div>
+					<div class="info-wrapper col-lg-6 col-md-12">
+						<ul>
+							<li>Gameplay Ability System.</li>
+							<li>AI, behaviour trees, blackboard.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
 	<section id="nighttime-runners" class="section fade-in section-nighttime-runners">
 		<div class="project-wrapper">
 			<div class="title-wrapper fade-in">
@@ -100,7 +141,7 @@
 				<p class="project-date"><i>(10/03/23 - Ongoing)</i></p>
 			</div>
 			<h4 class="fade-in">ABOUT THE GAME</h4>
-			<p class="fade-in">Nighttime Runners Is an asymmetric multiplayer “capture the flag”-like game, played at night! Forty stealthy terrain-traversal enthusiasts (Runners) attempt to claim their package and return to base, while eight tracking techies with flashlights (Seekers) attempt to catch them.</p><br>
+			<p class="fade-in">Nighttime Runners is an asymmetric multiplayer “capture the flag”-like game, played at night! Forty stealthy terrain-traversal enthusiasts (Runners) attempt to claim their package and return to base, while eight tracking techies with flashlights (Seekers) attempt to catch them.</p><br>
 			<h4 class="fade-in">THE TEAM</h4>
 			<p class="fade-in"><a href="https://www.voideagames.com/the-team">Voidea</a> is a twelve person indie studio made up of CG Spectrum students/alumni. I work with two other programmers and the designers to implement new features in C++ and Blueprints in Unreal Engine 5.</p>
 			<div class="container fade-in">
@@ -112,7 +153,7 @@
 						<ul>
 							<li>Joined Nighttime Runners halfway through development on 19/06/23.</li>
 							<li>Worked with replication within multiplayer systems.</li>
-							<li>Programmed a gear system involving data tables for gear effects and cosmetics.</li>
+							<li>Programmed a gear (equippable items) system involving data tables for gear effects and cosmetics.</li>
 							<li>Implemented a dynamic spawning system for forty eight players.</li>
 							<li>QA'd and bug-fixed packaged builds.</li>
 							<li>Maintained and implemented an external plugin: EIK, Epic (Online Services) Integration Kit. Links: <a href="https://github.com/betidestudio/EOSIntegrationKit">EIK Source</a> and <a href="https://betide-studio.gitbook.io/eos-integration-kit/">EOS Setup Guide</a></li>
@@ -123,10 +164,8 @@
 			<div class="content-wrapper fade-in">
 				<div class="tabbed">
 					<input type="radio" id="tab-nr-1" name="tabs-nighttime-runners" checked>
-					<input type="radio" id="tab-nr-2" name="tabs-nighttime-runners">
 					<ul class="tabs">
 						<li class="tab"><label for="tab-nr-1">Spawning System</label></li>
-						<li class="tab"><label for="tab-nr-2">Gear System</label></li>
 					</ul>
 					<div class="tab-content">
 						<div class="feature-media">
@@ -135,12 +174,6 @@
 						</div>
 						<div class="feature-description">
 							<p>Runners will spawn in one of six possible spawn points and the flag/package will spawn in a possible three opposite points.</p>
-						</div>
-					</div>
-					<div class="tab-content">
-						<div class="feature-media">
-							<div class="feature-asset placeholder">
-							</div>
 						</div>
 					</div>
 				</div>

@@ -131,8 +131,28 @@ section {
 	font-size: 100px;
 }
 
-.banner-title p {
+.banner-title h2 {
 	font-size: 70px;
+}
+
+@media (max-width: 1280px) {
+	.banner-title h1 {
+		font-size: 50px;
+	}
+
+	.banner-title h2 {
+		font-size: 35px;
+	}
+}
+
+@media (max-width: 520px) {
+	.banner-title h1 {
+		font-size: 30px;
+	}
+
+	.banner-title h2 {
+		font-size: 21px;
+	}
 }
 
 .banner-video {
@@ -174,7 +194,6 @@ section {
 
 .section-projects {
 	max-width: 1430px;
-    width: 1430px;
 }
 
 .section-projects h1 {
@@ -216,7 +235,6 @@ section {
 /*	width: 1280px;
 	height: 720px;*/
 	/* ratio 0.5625 */
-	width: 640px;
 	/*height: 360px;*/
 	height: 400px;
 	background-color: unset;
@@ -227,19 +245,28 @@ section {
 	width: 100%;
 	height: 100%;
 	background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center center;
+}
+
+.card-image-ira {
+	background-image: url("https://cdn.icon-icons.com/icons2/2367/PNG/512/question_mark_icon_143522.png");
+    filter: brightness(0) invert(1);
 }
 
 .card-image-nr {
-	background-image: url("../media/NR_card.png");
+	background-image: url("../media/NR_Logo.png");
+	background-color: black;
 }
 
 .card-image-qnn {
 	background-image: url("../media/QNN_card.png");
+	background-color: black;
 }
 
 .card-image-submerge {
 	background-image: url("../media/Submerge_card.png");
+	background-color: black;
 }
 
 .angler {
@@ -324,6 +351,13 @@ section {
 	height: 510px;
 }
 
+@media (max-width: 520px) {
+	.feature-media {
+		min-width: unset;
+		height: unset;
+	}
+}
+
 .feature-description {
 	padding: 0px 10px;
 	max-width: 500px;
@@ -338,6 +372,12 @@ section {
 /*  background-size: cover;*/
 }
 
+@media (max-width: 520px) {
+	.feature-asset {
+		min-height: unset;
+	}
+}
+
 .placeholder {
 	background-image: url("https://cdn.icon-icons.com/icons2/2367/PNG/512/question_mark_icon_143522.png");
 	filter: brightness(0) invert(1);
@@ -347,6 +387,12 @@ section {
 	background-image: url("../media/NRMap2.png");
 	min-height: 736px;
 	background-size: contain;
+}
+
+@media (max-width: 520px) {
+	.section-nighttime-runners .nr-spawn {
+		min-height: 280px;
+	}
 }
 
 .section-qnn .qnn-ui-1 {
