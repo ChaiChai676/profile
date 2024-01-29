@@ -348,7 +348,6 @@ section {
 	display: flex;
 	flex-direction: column;
 	min-width: 500px;
-	height: 510px;
 }
 
 @media (max-width: 520px) {
@@ -359,13 +358,12 @@ section {
 }
 
 .feature-description {
-	padding: 0px 10px;
-	max-width: 500px;
+	margin: auto;
 }
 
 .feature-asset {
 	margin-bottom: 10px;
-	min-height: 500px;
+	min-height: 660px;
 	background-repeat: no-repeat;
 	background-position-x: center;
 /*	background-color: #eee;*/
@@ -374,18 +372,18 @@ section {
 
 @media (max-width: 520px) {
 	.feature-asset {
-		min-height: unset;
+		min-height: 230px;
 	}
 }
 
 .placeholder {
 	background-image: url("https://cdn.icon-icons.com/icons2/2367/PNG/512/question_mark_icon_143522.png");
 	filter: brightness(0) invert(1);
+	height: 512px;
 }
 
 .section-nighttime-runners .nr-spawn {
 	background-image: url("../media/NRMap2.png");
-	min-height: 736px;
 	background-size: contain;
 }
 
@@ -395,10 +393,19 @@ section {
 	}
 }
 
-.section-qnn .qnn-ui-1 {
-	background-image: url("../media/UI.gif");
+.section-qnn .qnn-ui {
+	background-image: url("../media/ui.gif");
 	background-size: contain;
-	min-height: 280px;
+}
+
+.section-qnn .qnn-movement-component {
+	background-image: url("../media/movement-component.gif");
+	background-size: contain;
+}
+
+.section-qnn .qnn-grapple {
+	background-image: url("../media/grapple.gif");
+	background-size: contain;
 }
 
 /*.section-submerge .placeholder {
@@ -414,6 +421,7 @@ section {
 
 .tabbed {
 	/*overflow-x: hidden;*/ /* so we could easily hide the radio inputs */
+	width: 1160px;
 	margin: 10px 0;
 	padding-bottom: 16px;
 	border-bottom: 1px solid #ccc;

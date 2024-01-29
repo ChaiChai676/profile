@@ -153,7 +153,7 @@
 						<ul>
 							<li>Joined Nighttime Runners halfway through development on 19/06/23.</li>
 							<li>Worked with replication within multiplayer systems.</li>
-							<li>Programmed a gear (equippable items) system involving data tables for gear effects and cosmetics.</li>
+							<li>Programmed a gear system (equippable items) involving data tables for gear effects and cosmetics.</li>
 							<li>Implemented a dynamic spawning system for forty eight players.</li>
 							<li>QA'd and bug-fixed packaged builds.</li>
 							<li>Maintained and implemented an external plugin: EIK, Epic (Online Services) Integration Kit. Links: <a href="https://github.com/betidestudio/EOSIntegrationKit">EIK Source</a> and <a href="https://betide-studio.gitbook.io/eos-integration-kit/">EOS Setup Guide</a></li>
@@ -223,50 +223,38 @@
 			<div class="content-wrapper fade-in">
 				<div class="tabbed">
 					<input type="radio" id="tab-qnn-1" name="tabs-qnn" checked>
+					<input type="radio" id="tab-qnn-2" name="tabs-qnn">
 					<input type="radio" id="tab-qnn-3" name="tabs-qnn">
-					<input type="radio" id="tab-qnn-5" name="tabs-qnn">
-					<input type="radio" id="tab-qnn-6" name="tabs-qnn">
-					<input type="radio" id="tab-qnn-7" name="tabs-qnn">
 					<ul class="tabs">
-						<li class="tab"><label for="tab-qnn-1">UI and UMG Widgets</label></li>
-						<li class="tab"><label for="tab-qnn-3">Movement Component and Switches</label></li>
-						<li class="tab"><label for="tab-qnn-5">Grapple Arm</label></li>
-						<li class="tab"><label for="tab-qnn-6">Damage, Health and Respawn</label></li>
-						<li class="tab"><label for="tab-qnn-7">Animations <br><br></label></li>
+						<li class="tab"><label for="tab-qnn-1">Movement Component</label></li>
+						<li class="tab"><label for="tab-qnn-2">UI and UMG Widgets</label></li>
+						<li class="tab"><label for="tab-qnn-3">Grapple Arm</label></li>
 					</ul>
 					<div class="tab-content">
 						<div class="feature-media">
-							<div class="feature-asset qnn-ui-1">
+							<div class="feature-asset qnn-movement-component">
 							</div>
+						</div>
+						<div class="feature-description">
+							<p><!-- Movement component can be switch activated. --></p>
 						</div>
 					</div>
 					<div class="tab-content">
 						<div class="feature-media">
-							<!-- have a screenshot of the uproperties as well as a gif of spinning? -->
-							<div class="feature-asset placeholder">
+							<div class="feature-asset qnn-ui">
 							</div>
+						</div>
+						<div class="feature-description">
+							<p><!-- Health, mini-map, active arm. --></p>
 						</div>
 					</div>
 					<div class="tab-content">
 						<div class="feature-media">
-							<!-- gif should be an animtation of you grapple launching and pulling an object. code should be of maybe just the function names and you can talk about what happens in the ones that matter? -->
-							<div class="feature-asset placeholder">
+							<div class="feature-asset qnn-grapple">
 							</div>
 						</div>
-					</div>
-					<div class="tab-content">
-						<div class="feature-media">
-							<!-- screenshot of the blueprints for how you change the collision mesh. show code for damage over time and so on, the fact that it should hit any actor. -->
-							<div class="feature-asset placeholder">
-							</div>
-						</div>
-					</div>
-					<div class="tab-content">
-						<div class="feature-media">
-							<!-- gif of setting the blend space 600 - 1200 movement speed
-							gif of retargetting the Rig. Video will be of selecting bones and adding it to chain then playing an animation after. -->
-							<div class="feature-asset placeholder">
-							</div>
+						<div class="feature-description">
+							<p><!-- Animation states, line traces. --></p>
 						</div>
 					</div>
 				</div>
