@@ -393,8 +393,8 @@ section {
 	}
 }
 
-.section-qnn .qnn-ui {
-	background-image: url("../media/ui.gif");
+.section-qnn .qnn-widgets {
+	background-image: url("../media/widgets.gif");
 	background-size: contain;
 }
 
